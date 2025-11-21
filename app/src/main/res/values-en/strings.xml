@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scientific Calculator</string>
+    <string name="display_hint">0</string>
+    <string name="history">History</string>
+    <string name="clear_history">Clear History</string>
+    <string name="no_history">No calculation history</string>
+    <string name="error">Error</string>
+    <string name="invalid_expression">Invalid expression</string>
+
+    <!-- Button text -->
+    <string name="btn_0">0</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_dot">.</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_multiply">×</string>
+    <string name="btn_divide">÷</string>
+    <string name="btn_equals">=</string>
+    <string name="btn_clear">C</string>
+    <string name="btn_all_clear">AC</string>
+    <string name="btn_backspace">⌫</string>
+    <string name="btn_left_parenthesis">(</string>
+    <string name="btn_right_parenthesis">)</string>
+    <string name="btn_percent">%</string>
+
+    <!-- Scientific functions -->
+    <string name="btn_sin">sin</string>
+    <string name="btn_cos">cos</string>
+    <string name="btn_tan">tan</string>
+    <string name="btn_ln">ln</string>
+    <string name="btn_log">log</string>
+    <string name="btn_sqrt">√</string>
+    <string name="btn_power">^</string>
+    <string name="btn_factorial">!</string>
+    <string name="btn_pi">π</string>
+    <string name="btn_e">e</string>
+
+    <!-- Accessibility descriptions -->
+    <string name="accessibility_number_button">Number %1$s</string>
+    <string name="accessibility_operator_button">Operator %1$s</string>
+    <string name="accessibility_function_button">Function %1$s</string>
+    <string name="accessibility_clear_button">Clear</string>
+    <string name="accessibility_equals_button">Calculate</string>
+    <string name="accessibility_display">Calculator display</string>
+    <string name="accessibility_history_button">View calculation history</string>
+
+    <!-- Messages -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="confirm_clear_history">Are you sure you want to clear all calculation history?</string>
+    <string name="clear">Clear</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- History -->
+    <string name="history_empty_message">Start calculating to see your history here</string>
+    <string name="history_item_accessibility">Calculation: %1$s equals %2$s</string>
+</resources>

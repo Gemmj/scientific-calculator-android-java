@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/background_primary">
+
+    <!-- 左侧：显示屏区域 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:orientation="vertical"
+        android:background="@color/background_secondary"
+        android:padding="16dp">
+
+        <!-- 工具栏 -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_dark" />
+
+        <!-- 表达式显示 -->
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_secondary"
+            android:textSize="18sp"
+            android:gravity="end|center_vertical"
+            android:fontFamily="monospace"
+            android:scrollHorizontally="true"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:layout_marginTop="8dp" />
+
+        <!-- 结果显示 -->
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            style="@style/DisplayText"
+            android:text="@string/display_hint"
+            android:scrollHorizontally="true"
+            android:ellipsize="start"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+    <!-- 右侧：按键区域 -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- 科学函数行1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSin"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_sin" />
+
+                <Button
+                    android:id="@+id/btnCos"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_cos" />
+
+                <Button
+                    android:id="@+id/btnTan"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_tan" />
+
+                <Button
+                    android:id="@+id/btnLn"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_ln" />
+
+                <Button
+                    android:id="@+id/btnLog"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_log" />
+
+            </LinearLayout>
+
+            <!-- 科学函数行2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSqrt"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_sqrt" />
+
+                <Button
+                    android:id="@+id/btnPower"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_power" />
+
+                <Button
+                    android:id="@+id/btnFactorial"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_factorial" />
+
+                <Button
+                    android:id="@+id/btnPi"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_pi" />
+
+                <Button
+                    android:id="@+id/btnE"
+                    style="@style/FunctionButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_e" />
+
+            </LinearLayout>
+
+            <!-- 控制按钮行 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAllClear"
+                    style="@style/ClearButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_all_clear" />
+
+                <Button
+                    android:id="@+id/btnClear"
+                    style="@style/ClearButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_clear" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    style="@style/ClearButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_delete" />
+
+                <Button
+                    android:id="@+id/btnLeftBracket"
+                    style="@style/OperatorButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_left_bracket" />
+
+                <Button
+                    android:id="@+id/btnRightBracket"
+                    style="@style/OperatorButton"
+                    android:layout_weight="1"
+                    android:text="@string/btn_right_bracket" />
+
+            </LinearLayout>
+
+            <!-- 数字和运算符网格 -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:rowCount="4"
+                android:layout_marginTop="8dp">
+
+                <!-- 第一行 -->
+                <Button
+                    android:id="@+id/btn7"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_7" />
+
+                <Button
+                    android:id="@+id/btn8"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_8" />
+
+                <Button
+                    android:id="@+id/btn9"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_9" />
+
+                <Button
+                    android:id="@+id/btnDivide"
+                    style="@style/OperatorButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_divide" />
+
+                <Button
+                    android:id="@+id/btnPercent"
+                    style="@style/OperatorButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_percent" />
+
+                <!-- 第二行 -->
+                <Button
+                    android:id="@+id/btn4"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_4" />
+
+                <Button
+                    android:id="@+id/btn5"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_5" />
+
+                <Button
+                    android:id="@+id/btn6"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_6" />
+
+                <Button
+                    android:id="@+id/btnMultiply"
+                    style="@style/OperatorButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_multiply" />
+
+                <Button
+                    android:id="@+id/btnEquals"
+                    style="@style/EqualsButton"
+                    android:layout_columnWeight="1"
+                    android:layout_rowSpan="2"
+                    android:text="@string/btn_equals" />
+
+                <!-- 第三行 -->
+                <Button
+                    android:id="@+id/btn1"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_1" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_2" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_3" />
+
+                <Button
+                    android:id="@+id/btnMinus"
+                    style="@style/OperatorButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_minus" />
+
+                <!-- 第四行 -->
+                <Button
+                    android:id="@+id/btn0"
+                    style="@style/NumberButton"
+                    android:layout_columnSpan="2"
+                    android:layout_columnWeight="2"
+                    android:text="@string/btn_0" />
+
+                <Button
+                    android:id="@+id/btnDot"
+                    style="@style/NumberButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_dot" />
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    style="@style/OperatorButton"
+                    android:layout_columnWeight="1"
+                    android:text="@string/btn_plus" />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

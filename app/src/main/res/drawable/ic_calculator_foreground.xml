@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Calculator icon -->
+    <group android:scaleX="0.8"
+           android:scaleY="0.8"
+           android:translateX="10.8"
+           android:translateY="10.8">
+
+        <!-- Background rectangle -->
+        <path android:fillColor="@color/accent_blue"
+              android:pathData="M20,20h68v68h-68z"
+              android:strokeWidth="2"
+              android:strokeColor="@color/text_primary"/>
+
+        <!-- Display screen -->
+        <path android:fillColor="@color/background_secondary"
+              android:pathData="M25,25h58v18h-58z"/>
+
+        <!-- Buttons grid -->
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M25,50h12v8h-12z"/>
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M40,50h12v8h-12z"/>
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M55,50h12v8h-12z"/>
+        <path android:fillColor="@color/btn_operator"
+              android:pathData="M70,50h12v8h-12z"/>
+
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M25,62h12v8h-12z"/>
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M40,62h12v8h-12z"/>
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M55,62h12v8h-12z"/>
+        <path android:fillColor="@color/btn_operator"
+              android:pathData="M70,62h12v8h-12z"/>
+
+        <path android:fillColor="@color/btn_number"
+              android:pathData="M25,74h27v8h-27z"/>
+        <path android:fillColor="@color/btn_equals"
+              android:pathData="M55,74h27v8h-27z"/>
+    </group>
+</vector>
+
