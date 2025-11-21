@@ -1,10 +1,10 @@
-# Android 科学计算器
+# Android 科学计算器 (纯Java版)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=24)
-[![Kotlin](https://img.shields.io/badge/Kotlin-100%25-purple.svg)](https://kotlinlang.org/)
+[![Java](https://img.shields.io/badge/Java-100%25-orange.svg)](https://www.java.com/)
 
-一款现代化的 Android 科学计算器，具有精美的 Material Design 3 界面、全面的计算功能和持久化历史记录存储。
+一款现代化的 Android 科学计算器，使用纯Java开发，具有精美的 Material Design 3 界面、全面的计算功能和持久化历史记录存储。
 
 ## ✨ 功能特性
 
@@ -50,7 +50,7 @@
 ### 环境要求
 - Android Studio Arctic Fox 或更高版本
 - Android SDK API level 24+ (Android 7.0+)
-- Kotlin 1.8.0+
+- JDK 8 或更高版本
 
 ### 安装步骤
 
@@ -80,18 +80,18 @@ APK 将在 `app/build/outputs/apk/release/` 目录下生成
 ## 🏗️ Architecture
 
 ### Tech Stack
-- **Language**: Kotlin 100%
+- **Language**: Java 100%
 - **Min SDK**: API 24 (Android 7.0)
 - **Target SDK**: API 34 (Android 14)
-- **Architecture**: MVVM pattern with ViewBinding
+- **Architecture**: MVC pattern
 
 ## 🏗️ 技术架构
 
 ### 技术栈
-- **编程语言**：Kotlin 100%
+- **编程语言**：Java 100%
 - **最低 SDK**：API 24 (Android 7.0)
 - **目标 SDK**：API 34 (Android 14)
-- **架构模式**：MVVM 模式 + ViewBinding
+- **架构模式**：MVC 模式
 
 ### 核心组件
 - **MainActivity**：主界面，处理用户交互和计算
@@ -122,9 +122,9 @@ APK 将在 `app/build/outputs/apk/release/` 目录下生成
 5. 打开 Pull Request
 
 ### 代码规范
-- 遵循 Kotlin 编码规范
+- 遵循 Java 编码规范
 - 使用有意义的变量和函数名
-- 为公共 API 添加 KDoc 注释
+- 为公共 API 添加 JavaDoc 注释
 - 提交前确保所有测试通过
 
 ## 🐛 问题反馈
@@ -180,16 +180,16 @@ APK 将在 `app/build/outputs/apk/release/` 目录下生成
 ```
 app/
 ├── src/main/
-│   ├── java/com/example/myapplication1/
-│   │   ├── MainActivity.kt                 # 主界面
-│   │   ├── HistoryActivity.kt             # 历史记录界面
+│   ├── java/com/scientificcalculator/android/
+│   │   ├── MainActivity.java              # 主界面
+│   │   ├── HistoryActivity.java           # 历史记录界面
 │   │   ├── adapter/
-│   │   │   └── HistoryAdapter.kt          # 历史记录适配器
+│   │   │   └── HistoryAdapter.java        # 历史记录适配器
 │   │   ├── calculator/
-│   │   │   └── CalculatorEngine.kt        # 计算引擎
+│   │   │   └── CalculatorEngine.java      # 计算引擎
 │   │   └── data/
-│   │       ├── CalculationHistory.kt      # 数据模型
-│   │       └── DatabaseHelper.kt          # 数据库操作
+│   │       ├── CalculationHistory.java    # 数据模型
+│   │       └── DatabaseHelper.java        # 数据库操作
 │   ├── res/
 │   │   ├── layout/                        # 布局文件
 │   │   ├── layout-land/                   # 横屏布局
@@ -197,7 +197,7 @@ app/
 │   │   ├── drawable/                      # 图标和背景
 │   │   └── menu/                          # 菜单资源
 │   └── AndroidManifest.xml
-└── build.gradle.kts
+└── build.gradle
 ```
 
 ## 开发特性
