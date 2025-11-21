@@ -1,54 +1,242 @@
 # 开发指南
 
-本文档为科学计算器项目的开发者提供全面的信息。
+欢迎参与 Android 科学计算器的开发！本文档将帮助您快速上手。
 
-## 🏗️ 项目结构
+## 🚀 快速开始
 
+### 环境准备
+1. **Java开发环境**
+   - JDK 8 或更高版本
+   - 建议使用 JDK 17 (LTS版本)
+
+2. **Android开发环境**
+   - Android Studio Arctic Fox 或更高版本
+   - Android SDK API 24+ (Android 7.0+)
+   - Android Build Tools
+
+3. **版本控制**
+   - Git
+
+### 项目设置
+
+1. **克隆项目**
+   ```bash
+   git clone https://github.com/Gemmj/scientific-calculator-android-java.git
+   cd scientific-calculator-android-java
+   ```
+
+2. **导入Android Studio**
+   - 打开 Android Studio
+   - 选择 "Open an existing project"
+   - 选择项目目录
+
+3. **同步项目**
+   - Android Studio会自动提示同步Gradle
+   - 等待同步完成
+
+## 🏗️ 项目架构
+
+### 目录结构
 ```
-app/
-├── src/
-│   ├── main/
-│   │   ├── java/com/scientificcalculator/android/
-│   │   │   ├── MainActivity.kt              # 主计算器界面
-│   │   │   ├── HistoryActivity.kt           # 计算历史浏览器
-│   │   │   ├── calculator/
-│   │   │   │   └── CalculatorEngine.kt      # 核心计算逻辑
-│   │   │   ├── data/
-│   │   │   │   ├── DatabaseHelper.kt        # SQLite 数据库管理
-│   │   │   │   ├── CalculationHistory.kt    # 历史记录数据模型
-│   │   │   │   └── HistoryAdapter.kt        # RecyclerView 适配器
-│   │   │   └── utils/
-│   │   │       └── Constants.kt             # 应用常量
-│   │   ├── res/
-│   │   │   ├── layout/                      # UI 布局文件
-│   │   │   ├── values/                      # 字符串、颜色、尺寸
-│   │   │   ├── drawable/                    # 矢量图形和图片
-│   │   │   └── mipmap/                      # 应用图标
-│   │   └── AndroidManifest.xml              # 应用配置
-│   └── test/
-│       └── java/com/scientificcalculator/android/
-│           └── calculator/
-│               └── CalculatorEngineTest.kt  # 单元测试
-├── build.gradle.kts                         # 模块构建配置
-└── proguard-rules.pro                       # ProGuard 混淆规则
+app/src/main/java/com/scientificcalculator/android/
+├── MainActivity.java              # 主界面Activity
+├── HistoryActivity.java           # 历史记录界面
+├── adapter/
+│   └── HistoryAdapter.java        # 历史记录列表适配器
+├── calculator/
+│   └── CalculatorEngine.java      # 计算引擎核心
+└── data/
+    ├── CalculationHistory.java    # 计算历史数据模型
+    └── DatabaseHelper.java        # SQLite数据库操作
 ```
 
-## 🛠️ 开发环境设置
+### 核心组件说明
 
-### 环境要求
-- **Android Studio**: 2022.3.1 (Giraffe) 或更高版本
-- **JDK**: 11 或更高版本
-- **Android SDK**: API 24+ (Android 7.0+)
-- **Kotlin**: 1.8.0+
+#### MainActivity.java
+- 应用主界面
+- 处理用户输入和显示
+- 管理计算器状态
+- 响应按钮点击事件
 
-### IDE 配置
-1. **代码风格**: Android Studio 默认 Kotlin 风格
-2. **实时模板**: 启用 Android 和 Kotlin 模板
-3. **插件**: 确保 Kotlin 插件已启用
+#### CalculatorEngine.java
+- 数学表达式解析和计算
+- 使用exp4j库进行复杂计算
+- 错误处理和验证
 
-## 📐 架构设计
+#### DatabaseHelper.java
+- SQLite数据库管理
+- 历史记录的增删查改操作
+- 数据持久化
 
-### 设计模式
+#### HistoryAdapter.java
+- RecyclerView适配器
+- 显示计算历史列表
+- 处理历史项点击事件
+
+## 🛠️ 开发工作流
+
+### 分支策略
+- `main`: 稳定的生产分支
+- `develop`: 开发分支
+- `feature/*`: 功能分支
+- `bugfix/*`: Bug修复分支
+
+### 开发步骤
+1. **创建功能分支**
+   ```bash
+   git checkout -b feature/你的功能名称
+   ```
+
+2. **编写代码**
+   - 遵循Java编码规范
+   - 添加必要的注释
+   - 保持代码整洁
+
+3. **测试**
+   ```bash
+   # 运行单元测试
+   ./gradlew test
+   
+   # 构建并测试APK
+   ./gradlew assembleDebug
+   ```
+
+4. **提交代码**
+   ```bash
+   git add .
+   git commit -m "feat: 添加新功能描述"
+   ```
+
+5. **推送并创建PR**
+   ```bash
+   git push origin feature/你的功能名称
+   ```
+
+## 🧪 测试
+
+### 运行测试
+```bash
+# 运行所有单元测试
+./gradlew test
+
+# 运行特定测试
+./gradlew test --tests CalculatorEngineTest
+
+# 查看测试报告
+# 报告位置: app/build/reports/tests/testDebugUnitTest/index.html
+```
+
+### 添加测试
+1. 在 `app/src/test/java` 目录下创建测试文件
+2. 使用JUnit4框架编写测试
+3. 确保测试覆盖核心功能
+
+## 📝 代码规范
+
+### Java编码规范
+- 使用驼峰命名法
+- 类名首字母大写
+- 方法和变量名首字母小写
+- 常量使用全大写字母，用下划线分隔
+
+### 注释规范
+```java
+/**
+ * 计算数学表达式
+ * @param expression 数学表达式字符串
+ * @return 计算结果
+ * @throws IllegalArgumentException 当表达式无效时
+ */
+public double calculate(String expression) {
+    // 实现代码
+}
+```
+
+### 提交消息规范
+```
+type(scope): subject
+
+body
+
+footer
+```
+
+类型说明：
+- `feat`: 新功能
+- `fix`: Bug修复
+- `docs`: 文档更新
+- `style`: 代码格式化
+- `refactor`: 代码重构
+- `test`: 测试相关
+- `chore`: 构建工具或辅助工具的变动
+
+## 🐛 调试
+
+### 常见问题
+1. **编译错误**
+   - 检查Java版本兼容性
+   - 清理并重新构建: `./gradlew clean build`
+
+2. **依赖问题**
+   - 同步Gradle: `./gradlew --refresh-dependencies`
+
+3. **模拟器问题**
+   - 确保使用API 24+的模拟器
+   - 检查AVD设置
+
+### 调试工具
+- Android Studio调试器
+- Logcat日志查看
+- 布局检查器
+
+## 📦 构建和发布
+
+### 调试构建
+```bash
+./gradlew assembleDebug
+```
+
+### 发布构建
+```bash
+./gradlew assembleRelease
+```
+
+### 使用构建脚本
+```bash
+# Windows
+build.bat
+
+# Linux/Mac
+./build.sh
+```
+
+## 🤝 贡献指南
+
+1. Fork 项目
+2. 创建功能分支
+3. 提交更改
+4. 推送到分支
+5. 创建 Pull Request
+
+请确保您的贡献：
+- 遵循项目代码规范
+- 包含适当的测试
+- 更新相关文档
+- 通过所有CI检查
+
+## 📚 资源链接
+
+- [Android官方文档](https://developer.android.com/)
+- [exp4j数学库文档](https://www.objecthunter.net/exp4j/)
+- [Material Design指南](https://material.io/design)
+- [Java编码规范](https://google.github.io/styleguide/javaguide.html)
+
+## 💡 获取帮助
+
+- 提交Issue: [GitHub Issues](https://github.com/Gemmj/scientific-calculator-android-java/issues)
+- 查看已有讨论: [GitHub Discussions](https://github.com/Gemmj/scientific-calculator-android-java/discussions)
+
+感谢您的贡献！🎉
 应用遵循 **MVVM (Model-View-ViewModel)** 架构：
 
 - **Model**: 数据类和 SQLite 数据库 (`data/` 包)

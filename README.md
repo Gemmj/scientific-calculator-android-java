@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=24)
 [![Java](https://img.shields.io/badge/Java-100%25-orange.svg)](https://www.java.com/)
+[![Build Status](https://github.com/Gemmj/scientific-calculator-android-java/workflows/Android%20CI/badge.svg)](https://github.com/Gemmj/scientific-calculator-android-java/actions)
 
 一款现代化的 Android 科学计算器，使用纯Java开发，具有精美的 Material Design 3 界面、全面的计算功能和持久化历史记录存储。
 
@@ -71,6 +72,20 @@
 
 ### 构建 APK
 
+**快速构建（推荐）：**
+
+Windows用户：
+```cmd
+build.bat
+```
+
+Linux/Mac用户：
+```bash
+chmod +x build.sh
+./build.sh
+```
+
+**手动构建：**
 ```bash
 ./gradlew assembleRelease
 ```
